@@ -1,0 +1,11 @@
+backend/venv/
+backend/vectorstore/
+backend/docs/
+backend/.env
+frontend/node_modules/
+frontend/.git/
+frontend/build/
+.DS_Store
+__pycache__/
+*.pyc
+*.dylib
