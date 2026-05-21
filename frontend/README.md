@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# DocMind — AI Document Q&A
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Upload any PDF and ask questions about it using AI. Built with a RAG (Retrieval-Augmented Generation) pipeline, FastAPI backend, and React frontend.
 
-## Available Scripts
+## Demo
+> Upload a PDF → Ask questions → Get answers with source citations
 
-In the project directory, you can run:
+## How it works
+1. Upload a PDF — the document is split into chunks and embedded into a vector store
+2. Ask a question — the most relevant chunks are retrieved using semantic search
+3. Get an answer — a large language model answers using only your document as context
 
-### `npm start`
+## Tech Stack
+- **Frontend:** React.js
+- **Backend:** FastAPI (Python)
+- **Embeddings:** HuggingFace sentence-transformers
+- **Vector Store:** ChromaDB
+- **LLM:** Llama 3.3 70B via Groq API
+- **RAG Framework:** LangChain
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- Upload multiple PDFs — documents accumulate in the vector store
+- Source citations — see which file the answer came from
+- Source excerpts — expand to see the exact text chunks used
+- Chat interface — clean conversational UI
+- Clear & reset — wipe the session and start fresh
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
+- Python 3.11+
+- Node.js 18+
+- Groq API key (free at console.groq.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+echo "GROQ_API_KEY=your_key_here" > .env
+uvicorn api:app --reload
+```
 
-### `npm run build`
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open http://localhost:3000 to use the app.
