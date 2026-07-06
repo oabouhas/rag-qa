@@ -1,0 +1,39 @@
+[
+  {
+    "id": "it_admin_1",
+    "question": "What systems does the IT Systems and Network Administrator position help maintain?",
+    "expected_source_contains": "IT Systems",
+    "expected_keywords": ["VMware", "Switches", "Routers", "Servers"]
+  },
+  {
+    "id": "programming_guide_1",
+    "question": "What is the Learn Programming Academy's mission?",
+    "expected_source_contains": "Free+Course",
+    "expected_keywords": ["million", "programmers"]
+  },
+  {
+    "id": "interview_1",
+    "question": "Who was the interviewer for Omnia's frontend developer screening interview?",
+    "expected_source_contains": "Frontend Developer",
+    "expected_keywords": ["Martin Wheeler"]
+  },
+  {
+    "id": "resume_1",
+    "question": "What is Omnia's professional background according to her resume?",
+    "expected_source_contains": "Resume",
+    "expected_keywords": ["Computer Science", "machine learning"]
+  },
+  {
+    "id": "cs5003_1",
+    "question": "What set operations are covered in the first video of the CS5003 exercises?",
+    "expected_source_contains": "cs5003",
+    "expected_keywords": ["Subset", "powerset", "empty set"]
+  },
+  {
+    "id": "hallucination_guard_1",
+    "question": "What is the capital of France?",
+    "expected_source_contains": null,
+    "expected_keywords": null,
+    "expect_refusal": true
+  }
+]

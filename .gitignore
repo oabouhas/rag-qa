@@ -9,3 +9,6 @@ frontend/build/
 __pycache__/
 *.pyc
 *.dylib
+
+.env
+vectorstore/
