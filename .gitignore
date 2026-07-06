@@ -12,3 +12,6 @@ __pycache__/
 
 .env
 vectorstore/
+mlflow.db
+mlruns/
+backend/eval_results.json
