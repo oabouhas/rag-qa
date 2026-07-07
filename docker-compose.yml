@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - vectorstore_data:/app/vectorstore
+      - ./backend/docs:/app/docs
+
+volumes:
+  vectorstore_data:
